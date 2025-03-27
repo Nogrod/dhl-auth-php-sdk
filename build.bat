@@ -1,1 +1,0 @@
-java -jar openapi-generator-cli.jar generate -i pp-account-auth-ropc.yaml -g php-nextgen --git-user-id nogrod --git-repo-id dhl-auth-php-sdk --additional-properties invokerPackage=Dhl\Rest\Auth

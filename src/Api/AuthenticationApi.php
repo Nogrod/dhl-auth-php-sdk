@@ -1,4 +1,5 @@
 <?php
+
 /**
  * AuthenticationApi
  * PHP version 8.1
@@ -145,8 +146,7 @@ class AuthenticationApi
         string $client_id,
         string $client_secret,
         string $contentType = self::contentTypes['dispenseToken'][0]
-    ): \Dhl\Rest\Auth\Model\TokenResponse
-    {
+    ): \Dhl\Rest\Auth\Model\TokenResponse {
         list($response) = $this->dispenseTokenWithHttpInfo($grant_type, $username, $password, $client_id, $client_secret, $contentType);
         return $response;
     }
@@ -174,8 +174,7 @@ class AuthenticationApi
         string $client_id,
         string $client_secret,
         string $contentType = self::contentTypes['dispenseToken'][0]
-    ): array
-    {
+    ): array {
         $request = $this->dispenseTokenRequest($grant_type, $username, $password, $client_id, $client_secret, $contentType);
 
         try {
@@ -201,9 +200,9 @@ class AuthenticationApi
             $statusCode = $response->getStatusCode();
 
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
-                    if (in_array('\Dhl\Rest\Auth\Model\TokenResponse', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array('\Dhl\Rest\Auth\Model\TokenResponse', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -245,7 +244,7 @@ class AuthenticationApi
             }
 
             $returnType = '\Dhl\Rest\Auth\Model\TokenResponse';
-            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
@@ -309,8 +308,7 @@ class AuthenticationApi
         string $client_id,
         string $client_secret,
         string $contentType = self::contentTypes['dispenseToken'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         return $this->dispenseTokenAsyncWithHttpInfo($grant_type, $username, $password, $client_id, $client_secret, $contentType)
             ->then(
                 function ($response) {
@@ -341,8 +339,7 @@ class AuthenticationApi
         string $client_id,
         string $client_secret,
         string $contentType = self::contentTypes['dispenseToken'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         $returnType = '\Dhl\Rest\Auth\Model\TokenResponse';
         $request = $this->dispenseTokenRequest($grant_type, $username, $password, $client_id, $client_secret, $contentType);
 
@@ -350,7 +347,7 @@ class AuthenticationApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -402,8 +399,7 @@ class AuthenticationApi
         string $client_id,
         string $client_secret,
         string $contentType = self::contentTypes['dispenseToken'][0]
-    ): Request
-    {
+    ): Request {
 
         // verify the required parameter 'grant_type' is set
         if ($grant_type === null || (is_array($grant_type) && count($grant_type) === 0)) {

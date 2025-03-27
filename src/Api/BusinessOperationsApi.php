@@ -1,4 +1,5 @@
 <?php
+
 /**
  * BusinessOperationsApi
  * PHP version 8.1
@@ -135,8 +136,7 @@ class BusinessOperationsApi
      */
     public function hello(
         string $contentType = self::contentTypes['hello'][0]
-    ): \Dhl\Rest\Auth\Model\TokenResponse
-    {
+    ): \Dhl\Rest\Auth\Model\TokenResponse {
         list($response) = $this->helloWithHttpInfo($contentType);
         return $response;
     }
@@ -154,8 +154,7 @@ class BusinessOperationsApi
      */
     public function helloWithHttpInfo(
         string $contentType = self::contentTypes['hello'][0]
-    ): array
-    {
+    ): array {
         $request = $this->helloRequest($contentType);
 
         try {
@@ -181,9 +180,9 @@ class BusinessOperationsApi
             $statusCode = $response->getStatusCode();
 
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
-                    if (in_array('\Dhl\Rest\Auth\Model\TokenResponse', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array('\Dhl\Rest\Auth\Model\TokenResponse', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -225,7 +224,7 @@ class BusinessOperationsApi
             }
 
             $returnType = '\Dhl\Rest\Auth\Model\TokenResponse';
-            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
@@ -279,8 +278,7 @@ class BusinessOperationsApi
      */
     public function helloAsync(
         string $contentType = self::contentTypes['hello'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         return $this->helloAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
@@ -301,8 +299,7 @@ class BusinessOperationsApi
      */
     public function helloAsyncWithHttpInfo(
         string $contentType = self::contentTypes['hello'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         $returnType = '\Dhl\Rest\Auth\Model\TokenResponse';
         $request = $this->helloRequest($contentType);
 
@@ -310,7 +307,7 @@ class BusinessOperationsApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -352,8 +349,7 @@ class BusinessOperationsApi
      */
     public function helloRequest(
         string $contentType = self::contentTypes['hello'][0]
-    ): Request
-    {
+    ): Request {
 
 
         $resourcePath = '/hello';

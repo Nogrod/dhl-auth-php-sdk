@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GetSemanticVersion200Response
  *
@@ -377,7 +378,7 @@ class GetSemanticVersion200Response implements ModelInterface, ArrayAccess, Json
     #[ReturnTypeWillChange]
     public function jsonSerialize(): mixed
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+        return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**

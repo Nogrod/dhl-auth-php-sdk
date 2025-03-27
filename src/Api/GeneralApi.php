@@ -1,4 +1,5 @@
 <?php
+
 /**
  * GeneralApi
  * PHP version 8.1
@@ -135,8 +136,7 @@ class GeneralApi
      */
     public function getSemanticVersion(
         string $contentType = self::contentTypes['getSemanticVersion'][0]
-    ): \Dhl\Rest\Auth\Model\GetSemanticVersion200Response
-    {
+    ): \Dhl\Rest\Auth\Model\GetSemanticVersion200Response {
         list($response) = $this->getSemanticVersionWithHttpInfo($contentType);
         return $response;
     }
@@ -154,8 +154,7 @@ class GeneralApi
      */
     public function getSemanticVersionWithHttpInfo(
         string $contentType = self::contentTypes['getSemanticVersion'][0]
-    ): array
-    {
+    ): array {
         $request = $this->getSemanticVersionRequest($contentType);
 
         try {
@@ -181,9 +180,9 @@ class GeneralApi
             $statusCode = $response->getStatusCode();
 
 
-            switch($statusCode) {
+            switch ($statusCode) {
                 case 200:
-                    if (in_array('\Dhl\Rest\Auth\Model\GetSemanticVersion200Response', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array('\Dhl\Rest\Auth\Model\GetSemanticVersion200Response', ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -225,7 +224,7 @@ class GeneralApi
             }
 
             $returnType = '\Dhl\Rest\Auth\Model\GetSemanticVersion200Response';
-            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+            if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
                 $content = (string) $response->getBody();
@@ -279,8 +278,7 @@ class GeneralApi
      */
     public function getSemanticVersionAsync(
         string $contentType = self::contentTypes['getSemanticVersion'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         return $this->getSemanticVersionAsyncWithHttpInfo($contentType)
             ->then(
                 function ($response) {
@@ -301,8 +299,7 @@ class GeneralApi
      */
     public function getSemanticVersionAsyncWithHttpInfo(
         string $contentType = self::contentTypes['getSemanticVersion'][0]
-    ): PromiseInterface
-    {
+    ): PromiseInterface {
         $returnType = '\Dhl\Rest\Auth\Model\GetSemanticVersion200Response';
         $request = $this->getSemanticVersionRequest($contentType);
 
@@ -310,7 +307,7 @@ class GeneralApi
             ->sendAsync($request, $this->createHttpClientOption())
             ->then(
                 function ($response) use ($returnType) {
-                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'])) {
+                    if (in_array($returnType, ['\SplFileObject', '\Psr\Http\Message\StreamInterface'], true)) {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
@@ -352,8 +349,7 @@ class GeneralApi
      */
     public function getSemanticVersionRequest(
         string $contentType = self::contentTypes['getSemanticVersion'][0]
-    ): Request
-    {
+    ): Request {
 
 
         $resourcePath = '/';
