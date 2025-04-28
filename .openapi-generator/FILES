@@ -22,9 +22,3 @@ src/Model/GetSemanticVersion200ResponseAmp.php
 src/Model/ModelInterface.php
 src/Model/TokenResponse.php
 src/ObjectSerializer.php
-tests/Api/AuthenticationApiTest.php
-tests/Api/BusinessOperationsApiTest.php
-tests/Api/GeneralApiTest.php
-tests/Model/GetSemanticVersion200ResponseAmpTest.php
-tests/Model/GetSemanticVersion200ResponseTest.php
-tests/Model/TokenResponseTest.php
