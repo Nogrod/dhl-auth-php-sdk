@@ -16,6 +16,7 @@ src/Api/BusinessOperationsApi.php
 src/Api/GeneralApi.php
 src/ApiException.php
 src/Configuration.php
+src/FormDataProcessor.php
 src/HeaderSelector.php
 src/Model/GetSemanticVersion200Response.php
 src/Model/GetSemanticVersion200ResponseAmp.php
