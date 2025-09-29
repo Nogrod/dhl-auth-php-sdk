@@ -1,0 +1,1 @@
+https://developer.dhl.com/api-reference/authentication-api-post-paket-deutschland?language_content_entity=en#downloads-section
