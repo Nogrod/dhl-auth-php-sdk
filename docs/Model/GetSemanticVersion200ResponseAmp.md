@@ -1,4 +1,4 @@
-# # GetSemanticVersion200ResponseAmp
+# GetSemanticVersion200ResponseAmp
 
 ## Properties
 

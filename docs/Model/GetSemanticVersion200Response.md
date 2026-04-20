@@ -1,4 +1,4 @@
-# # GetSemanticVersion200Response
+# GetSemanticVersion200Response
 
 ## Properties
 
