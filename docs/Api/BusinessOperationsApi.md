@@ -15,7 +15,7 @@ hello(): \Dhl\Rest\Auth\Model\TokenResponse
 
 This allows testing of the token and also alternative authentication methods.
 
-Makes a request to a test resource. Both old-style (apikey + basic auth) and token-based authentication are supported.  <p><h3>Usage</h3>  <h4>Bearer Token</h4>  Provide the token which you have obtained above in the HTTP header 'Authorization' as 'Bearer HereGoesMyToken'. On success, some information on the token is returned.   <h4> Basic Auth </h4>  Alternatively, the test resource can be used by providing:  <p>  * the API Key (client_id) in the HTTP header 'dhl-api-key'  * gkp user and gkp password in the HTTP header 'Authorization' with schema 'Basic'. For test purposes, use 'gkpuser' as username and 'gkppass' as password.  <p> Using different combinations of credentials will result in errors.
+Makes a  token-based authentication request to a test resource. <p><h3>Usage</h3>  <h4>Bearer Token</h4>  Provide the token which you have obtained above in the HTTP header 'Authorization' as 'Bearer HereGoesMyToken'. On success, some information on the token is returned.
 
 ### Example
 

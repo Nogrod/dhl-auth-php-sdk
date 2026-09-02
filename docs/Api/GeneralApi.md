@@ -24,15 +24,11 @@ Returns the current version of the API as major.minor.patch. Supports content ne
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-// Configure Bearer (Apigee) authorization: bearerAuth
-$config = Dhl\Rest\Auth\Configuration::getDefaultConfiguration()->setAccessToken('YOUR_ACCESS_TOKEN');
-
 
 $apiInstance = new Dhl\Rest\Auth\Api\GeneralApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 
 try {
@@ -53,7 +49,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[bearerAuth](../../README.md#bearerAuth)
+No authorization required
 
 ### HTTP request headers
 

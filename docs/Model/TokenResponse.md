@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**access_token** | **string** |  | [optional]
+**access_token** | **string** | Opaque access token to be used for Bearer authentication | [optional]
 **token_type** | **string** | Will be set to &#39;Bearer&#39; | [optional]
 **expires_in** | **int** | Seconds | [optional]
 
