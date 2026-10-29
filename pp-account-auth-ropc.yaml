@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  version: 2.0.5
+  version: 2.0.6
   title:  DHL Parcel Germany Account Authorization API 
   description: >
       This API describes how API client can obtain a token which is used to access various Parcel Germany APIs.
@@ -116,6 +116,8 @@ paths:
             
             * Returns an opaque access token. Use this as BearerToken where required.
             * Example values can be used as-is to try out with the sandbox.
+            
+            __Note__: this resource only supports POST. Any other HTTP method results in a 405 (Method Not Allowed).
             
       tags:
         - Authentication
@@ -255,6 +257,9 @@ components:
       description: >
         Forbidden - The client has successfully been authenticated but could not
         be authorized for the particular request.
+    '405':
+      description: >
+        Method Not Allowed - Resource /parcel/de/account/auth/ropc/v1/token doesn't support GET.
   securitySchemes:
     bearerAuth:            # arbitrary name for the security scheme
       type: http

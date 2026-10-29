@@ -15,7 +15,7 @@ dispenseToken($grant_type, $username, $password, $client_id, $client_secret): \D
 
 Obtains an access token based on the credentials submitted or based on the refresh token.
 
-The client makes a request to the token endpoint by adding the following parameters  using the application/x-www-form-urlencoded format with a character encoding of UTF-8 in the HTTP request entity-body:  * grant_type __REQUIRED__. Must be set to \"password\".  * client_id __REQUIRED__ (aka client_id (api key))  * client_secret __REQUIRED__ (aka client_secret)  * username __REQUIRED__. The resource owner username. Aka username for business customer portal  * password __REQUIRED__. The resource owner password. Aka password for business customer portal  __Notes__  * Returns an opaque access token. Use this as BearerToken where required. * Example values can be used as-is to try out with the sandbox.
+The client makes a request to the token endpoint by adding the following parameters  using the application/x-www-form-urlencoded format with a character encoding of UTF-8 in the HTTP request entity-body:  * grant_type __REQUIRED__. Must be set to \"password\".  * client_id __REQUIRED__ (aka client_id (api key))  * client_secret __REQUIRED__ (aka client_secret)  * username __REQUIRED__. The resource owner username. Aka username for business customer portal  * password __REQUIRED__. The resource owner password. Aka password for business customer portal  __Notes__  * Returns an opaque access token. Use this as BearerToken where required. * Example values can be used as-is to try out with the sandbox.  __Note__: this resource only supports POST. Any other HTTP method results in a 405 (Method Not Allowed).
 
 ### Example
 
